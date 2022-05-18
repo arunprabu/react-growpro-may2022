@@ -1,0 +1,63 @@
+Primitive Datatypes:
+---
+  string, number, boolean, undefined, null, symbol (es2015), big int(es2017)
+
+Non-primitive / Reference types 
+---
+  Array, Object, RegExp 
+
+Note: Share ES6 e-book link 
+
+NodeJS Ecosystem 
+---
+ 
+---
+NodeJS Ecosystem - Dependencies 
+  1. Project Dependencies 
+      * some packages are needed for the app's functionality or feature to work 
+      * will be part of the prod build 
+
+      examples: react, @angular/core, vue, bootstrap, jquery, datatables, dropzone, redux 
+
+      All 4 commands are same 
+      --
+        npm i bootstrap
+        npm i bootstrap -S 
+        npm i bootstrap --save 
+        npm install bootstrap --save 
+
+
+      "dependencies": {
+        "bootstrap": "^5.1.3"
+      }
+
+
+  2. Development Dependencies 
+      * some packages are needed only for better,smoother, dev work flow 
+      * needed during development 
+      * will never be part of prod build 
+
+      examples: webpack, typescript, nodemon, jest, 
+
+      All 2 commands are same 
+      --
+        npm i webpack -D 
+        npm i webpack --save-dev 
+        npm install webpack --save-dev 
+
+      "devDependencies": {
+        "webpack": "^5.72.1"
+      }
+
+      
+
+NPM - Node Package Manager 
+---
+  * Install packages 
+      npm i bootstrap
+  * Update packages 
+      npm update bootstrap
+  * Uninstall packages 
+      npm uninstall bootstrap
+  
+
