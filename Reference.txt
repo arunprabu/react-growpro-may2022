@@ -49,7 +49,14 @@ NodeJS Ecosystem - Dependencies
         "webpack": "^5.72.1"
       }
 
-      
+  3. Global Dependencies 
+      * will be installed system-wide 
+
+      npm i @angular/cli -g 
+      ng new pjt-name
+
+TODO: Where will the global dependencies be installed in windows?
+TODO: npm prune 
 
 NPM - Node Package Manager 
 ---
@@ -61,3 +68,9 @@ NPM - Node Package Manager
       npm uninstall bootstrap
   
 
+npm uninstall create-react-app -g
+
+
+
+Webapps 
+React JS 

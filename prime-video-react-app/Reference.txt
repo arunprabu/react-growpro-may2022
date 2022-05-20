@@ -1,0 +1,91 @@
+Webapps 
+---
+  1. Server Side Rendering Apps (SSR) / Traditional Webapps 
+      * Pages will reload / refresh 
+
+      Arch 
+        1 Server 
+        ---
+          Resp: HTML, CSS, JS + Data 
+
+      Codebase 
+        1 Project 
+        ----
+          Front End (HTML, CSS, JS ) + Back End (Java/Dotnet/PHP/Python/Ruby) + DB Queries (SQL, NoSQL)  
+
+      Disadv 
+      ---
+        1. Server has to do the heavy-lifting 
+        2. Slower Webapps 
+        3. More Bandwidth Consumption 
+        4. More Expensive 
+        5. Not a better user experience 
+
+
+  2. Client Side Rendering Apps (CSR) / Modern Webapps 
+      * Pages will not reload / refresh 
+
+      Arch 
+      --
+        2 Servers 
+          1 Front End Server (port 3000) - Single Page App (SPA)
+              Resp: HTML, CSS, JS, placeholder for data (wait for data)
+
+          1 Back End Server (port 8080 ) - RESTful API 
+              Resp: Data (JSON) 
+
+      Codebase 
+      --
+        2 Projects 
+          1 Front End Project (HTML, CSS, JS)
+          1 Back End Project (Java/DotNet/PHP/Python/Ruby + SQL, NoSQL)
+      
+      Adv
+      ---
+        1. Workload is shared between two servers 
+        2. Faster Webapps 
+        3. Less Bandwidth Consumption 
+        4. Less Expensive 
+        5. Better User Experience to end users 
+
+      Disadv 
+      --
+        1. Not Search Engine Friendly (can be fixed)
+        2. Initial Loading will take longer (can be fixed)
+
+---
+Single Page App (SPA)
+---
+  Characteristics (7)
+  --
+    1. Page should not reload / refresh 
+    2. URL should change 
+    3. History should be maintained without page refresh 
+    4. Header and footer should be retained
+    5. Page should be contextually updated in between header and footer (in b/w section should be updated)
+    6. Active menu should be set 
+    7. Page Title should be changed 
+
+  SPA Frameworks / Libraries 
+  ---
+    #1 React JS (Library)
+    #2 VueJS  (Framework)
+    #3 Angular (Framework)
+
+----
+
+
+Why React?
+Competitors 
+
+
+What is React? 
+Other Tools: 
+
+React JS 
+  File Walkthru 
+  App Arch
+  How react apps are running?
+
+
+
