@@ -10,7 +10,9 @@ import reportWebVitals from './reportWebVitals';
 // using React DOM package
 // app comp is rendered into an element that has id root
 ReactDOM.render(
-  <App />
+  <div>
+    <App />
+  </div>
 , document.getElementById('root')
 );
 

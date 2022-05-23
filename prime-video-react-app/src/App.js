@@ -8,13 +8,21 @@
 
 // imports 
 import './App.css';
+import Header from './Components/Header';
+import Footer from './Components/Footer';
 
+// alo known as root comp / default comp / main comp 
 // comp defn 
+// ideal place for layouts
 function App() {
   // comp should return JSX 
-  return (
+  return(
     <div>
-      <h1>Success</h1>
+      <Header />
+
+      <h1>Success</h1> 
+      
+      <Footer></Footer>
     </div>
   );
 }
