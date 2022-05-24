@@ -1,13 +1,17 @@
 // Functional Components with Anonymous Fn
 
 import React from 'react';
+import Menu from './Menu';
 
 const Footer = function(){
+
+  const copyrightYear = 2022;
+
   return(
-    <footer>
+    <footer className='text-center'>
       <hr />
-      
-      <p>Copyright 2022 | Arun</p>
+      <Menu />
+      <p>Copyright {copyrightYear} | Arun</p>
     </footer>
   )
 }

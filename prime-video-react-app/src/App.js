@@ -10,8 +10,9 @@
 import './App.css';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
+import Home from './Components/Home/Home';
 
-// alo known as root comp / default comp / main comp 
+// also known as root comp / default comp / main comp 
 // comp defn 
 // ideal place for layouts
 function App() {
@@ -20,8 +21,10 @@ function App() {
     <div>
       <Header />
 
-      <h1>Success</h1> 
-      
+      <div className='mt-5 pt-2'>
+        <Home />
+      </div>
+
       <Footer></Footer>
     </div>
   );
