@@ -8,8 +8,8 @@
 
 // imports 
 import './App.css';
-import Header from './Components/Header';
-import Footer from './Components/Footer';
+import Header from './Components/Shared/Header';
+import Footer from './Components/Shared/Footer';
 import Home from './Components/Home/Home';
 
 // also known as root comp / default comp / main comp 

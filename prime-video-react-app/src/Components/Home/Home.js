@@ -53,7 +53,7 @@ const Home = () => {
       </Program>
       <hr />
 
-      <h2>Channel List | States Demo</h2>
+      <h2>Channel List | States and Events Demo</h2>
       <ChannelList />
 
     </div>

@@ -136,8 +136,48 @@ Cross Component Communication / Sharing data across component
       using Redux Framework 
 
 -----
+Project Structure
+--
+src/
+  Components/   (functional components )
+    Shared/
+      Header/
+        Header.js
+        Header.css
+        Header.test.js 
+      Footer/
+        Footer.js
+        Footer.css
+      Menu 
+    Home/
+      Home
+      Program 
+    Dashboard
+    Reports
+    Auth/
+      Login
+      Signup 
+      ResetPW 
+    About 
+    Contact 
+    Support
+  Containers/  (class components )
+    ChannelList
 
+---
 
+naming conventions
+-
+  * comp names PascalCase
+  * variables, methods, event handlers -- in camelCase 
+  * arrays -- in camelCase but in plural (colors, channels) or else (colorList, channelList)
+  * objects - can have Data suffix (contactData) or else (contact)
+  * booleans -- isLoggedIn, isValid, hasToken, isAuth 
+  * event handler methods or functions in react -- should have handle Prefix or else Handler suffix 
+      (handleAddToFavorite, addToFavouriteHandler)
+  * never use snake case 
+
+====
 
 
 
