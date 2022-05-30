@@ -30,6 +30,17 @@ class TrendingShows extends Component {
     }
   }
 
+  handleWatchlist(index){
+    console.log(index);
+    
+    // updating state immutably 
+    let movies = [ ...this.state.movieList ];
+    movies[index].isInWatchlist = !movies[index].isInWatchlist; // toggling is in watchlist
+    this.setState({
+      movieList: movies
+    });
+  }
+
   render() {
     // ideal place for you to loop thru using map -- lists 
     // ideal place for any comp specific transformations in JSX
@@ -37,8 +48,7 @@ class TrendingShows extends Component {
 
     if (Array.isArray(this.state.movieList)) {
       // Lists
-      movies = this.state.movieList.map((movie) => {
-        console.log(movie);
+      movies = this.state.movieList.map((movie, index) => {
         return (
           // Key is to uniquely identify
           <div className="col-md-3" key={movie.id}>
@@ -50,7 +60,8 @@ class TrendingShows extends Component {
                 <p className="card-text">{movie.desc}</p>
                 <button type="button" className="btn btn-primary">Watch Now</button>
                 <button type="button" 
-                  className="btn btn-success float-end" >
+                  className="btn btn-success float-end" 
+                  onClick={this.handleWatchlist.bind(this, index)}>
                     { movie.isInWatchlist? 'In Watchlist': 'Add to Watchlist' }
                 </button>
               </div>
