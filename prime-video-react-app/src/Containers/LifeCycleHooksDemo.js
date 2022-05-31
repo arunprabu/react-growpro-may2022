@@ -68,7 +68,6 @@ class LifeCycleHooksDemo extends Component {
     console.log("============7. Inside componentWillUnmount -- comp destroyed");
   }
 
-
   render() {
     // NEVER EVER CHANGE STATE HERE
     // render method will be called automatically. 

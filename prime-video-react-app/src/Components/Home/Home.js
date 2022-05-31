@@ -1,8 +1,10 @@
 import React from 'react'
 import ChannelList from '../../Containers/ChannelList';
 import LifeCycleHooksDemo from '../../Containers/LifeCycleHooksDemo';
+import MyProfile from '../../Containers/MyProfile';
 import TrendingShows from '../../Containers/TrendingShows';
 import Program from './Program';
+import Subscription from './Subscription';
 
 const Home = () => {
   return (
@@ -65,7 +67,15 @@ const Home = () => {
 
       <h2>LifeCycle Hooks Demo</h2>
       <LifeCycleHooksDemo />
+      <hr/>
 
+      <h2>Subscription | Styling in React</h2>
+      <Subscription />
+      <hr/>
+
+      <h2>My Profile | Two Way Data Binding</h2>
+      <MyProfile />
+      <hr/>
     </div>
 
   )

@@ -7,10 +7,16 @@
 */
 
 // imports 
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Header from './Components/Shared/Header';
 import Footer from './Components/Shared/Footer';
 import Home from './Components/Home/Home';
+import HocDemo from './Components/HocDemo/HocDemo';
+import UnitTestingDemo from './Components/UnitTestingDemo/UnitTestingDemo';
+import HooksDemo from './Components/HooksDemo/HooksDemo';
+import ContextDemo from './Components/ContextDemo/ContextDemo';
+import StyledCompDemo from './Components/StyledCompDemo/StyledCompDemo';
 
 // also known as root comp / default comp / main comp 
 // comp defn 
@@ -18,15 +24,23 @@ import Home from './Components/Home/Home';
 function App() {
   // comp should return JSX 
   return(
-    <div>
+    <BrowserRouter>
       <Header />
 
-      <div className='mt-5 pt-2'>
-        <Home />
+      <div className='container mt-5 pt-2'>
+        {/* Let's configure the routes */}
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/hoc-demo' element={<HocDemo />} />
+          <Route path='/unit-testing' element={<UnitTestingDemo />} />
+          <Route path='/hooks' element={<HooksDemo />} />
+          <Route path='/context' element={<ContextDemo />} />
+          <Route path='/styled-comp' element={<StyledCompDemo />} />
+        </Routes>
       </div>
 
       <Footer></Footer>
-    </div>
+    </BrowserRouter>
   );
 }
 

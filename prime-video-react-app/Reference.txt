@@ -63,8 +63,8 @@ Single Page App (SPA)
     3. History should be maintained without page refresh 
     4. Header and footer should be retained
     5. Page should be contextually updated in between header and footer (in b/w section should be updated)
-    6. Active menu should be set 
-    7. Page Title should be changed 
+    6. Active menu should be set [TODO]
+    7. Page Title should be changed [TODO]
 
   SPA Frameworks / Libraries 
   ---
@@ -180,4 +180,50 @@ naming conventions
 ====
 
 
+
+Routing in React 
+---
+  Step 1: 
+    npm i react-router-dom
+
+  Step 2: 
+    Identify the URL's for each menu item
+    Home          =>   localhost:3000/
+    HOC Demo      =>   localhost:3000/hoc-demo
+    Unit Testing  =>   localhost:3000/unit-testing
+    Hooks Demo    =>   localhost:3000/hooks
+    Products      =>   localhost:3000/context
+
+  Step 3: 
+    Let's setup the URL's properly in Menu comp.
+    Check the app. URL's will change. Page will still refresh.
+
+  Step 4: 
+    Create the necessary comp for all the URL's 
+
+    Home comp is already created. Let's create other components 
+
+  Step 5: 
+    in App Comp, Let's configure the routes 
+    Put the whole app under <BrowserRouter>
+    Then, in between header and footer, config the routes 
+    <Routes>
+      <Route path='/' element={<Home />} />
+      <Route path='/hoc-demo' element={<HocDemo />} />
+      <Route path='/unit-testing' element={<UnitTestingDemo />} />
+      <Route path='/hooks' element={<HooksDemo />} />
+      <Route path='/context' element={<ContextDemo />} />
+    </Routes>
+    
+  Step 6: 
+    Check the app. Page will still refresh. Fix it.
+    Replace a href with NavLink to 
+    <NavLink to="/" className="nav-link active" aria-current="page" >Home</NavLink>
+
+
+  TODO: Setup active menu 
+  TODO: Setup Page Title. Use react-helmet package
+
+
+----
 
