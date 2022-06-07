@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const Program = (props) => { // receive data from parent comp
   console.log(props);
@@ -30,5 +31,12 @@ const Program = (props) => { // receive data from parent comp
     </div>
   )
 }
+
+Program.propTypes = {
+  name: PropTypes.string,
+  category: PropTypes.string,
+  time: PropTypes.string
+}
+
 
 export default Program

@@ -1,8 +1,12 @@
 import React from 'react'
+import MyAccount from './MyAccount'
 
 const HooksDemo = () => {
   return (
-    <div>HooksDemo</div>
+    <div>
+      <h1>HooksDemo</h1>
+      <MyAccount />
+    </div>
   )
 }
 

@@ -74,7 +74,7 @@ class LifeCycleHooksDemo extends Component {
     // for render method to be called .. this class comp should exten React.Component 
     console.log('=============2 & 5. Inside render');
     return (
-      <div>
+      <>
         <h3>{this.state.featureName}</h3>
 
         {
@@ -86,7 +86,7 @@ class LifeCycleHooksDemo extends Component {
             <a href="https://17.reactjs.org/docs/react-component.html">Read more about Lifecycle Hooks </a>
           </div>
         }
-      </div>
+      </>
     )
   }
 }
