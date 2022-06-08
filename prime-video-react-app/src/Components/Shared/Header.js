@@ -18,6 +18,7 @@ function Header() {
           <div className="collapse navbar-collapse" id="navbarCollapse">
             <Menu />
           </div>
+          <button type='button' className='btn btn-danger'>Cart (0)</button>
         </div>
       </nav>
     </header>

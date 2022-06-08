@@ -130,9 +130,10 @@ Cross Component Communication / Sharing data across component
 
   2. Child Comp to Parent Component Communication [TODO]
       using props, events, callback fn 
+      Refer: render props in reactjs.org 
 
   3. Any to Any Component Communication
-      using Context API of ReactJS or 
+      using Context API of ReactJS Hooks 
       using Redux Framework 
 
 -----
