@@ -1,9 +1,13 @@
 // Functional Components with Named Fn 
 
 import React from 'react';
+import { useCartState } from '../../Hooks/useCartState';
 import Menu from './Menu';
 
 function Header() {
+
+  const { cartState } = useCartState();
+  console.log(cartState);
 
   const appName = "Prime Video App";
 
@@ -18,7 +22,7 @@ function Header() {
           <div className="collapse navbar-collapse" id="navbarCollapse">
             <Menu />
           </div>
-          <button type='button' className='btn btn-danger'>Cart (0)</button>
+          <button type='button' className='btn btn-danger'>Cart ({cartState.cartItems.length})</button>
         </div>
       </nav>
     </header>

@@ -228,3 +228,25 @@ Routing in React
 
 ----
 
+Working with useContext() Hook 
+---
+  Let's share data across comp 
+
+  Step 1: 
+    create context with any data or null 
+    createContext() 
+  
+  Step 2: 
+    Provide the data to the the whole app  
+  
+  Step 3: 
+    Using Provider to share data across the few components 
+    <Context.Provider>
+      <Home />
+      <About/>
+    </Context.Provider>
+
+  Step4: 
+    consume the in the components 
+    useContext()
+

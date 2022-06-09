@@ -1,6 +1,11 @@
-import React from 'react'
+import React from 'react';
+import { useCartState } from '../../Hooks/useCartState';
 
 const Products = () => {
+
+  console.log('Inside Products - Program Started');
+  const { cartDispatch } = useCartState();
+  
 
   const pdtList = [
     {
@@ -19,6 +24,14 @@ const Products = () => {
     }
   ]
 
+  const handleAddToCart = (pdt) => {
+    console.log(pdt);
+    cartDispatch({
+      type: 'ADD_TO_CART',
+      payload: pdt
+    })
+  }
+
   let products = null
   products = pdtList.map((pdt) => {
     return (
@@ -30,7 +43,7 @@ const Products = () => {
               {pdt.productDescription}
             </p>
             <p>Rs. {pdt.price}</p>
-            <button className="btn btn-primary" >
+            <button className="btn btn-primary" onClick={handleAddToCart.bind(this, pdt)}>
               Add to Cart
             </button>
           </div>
