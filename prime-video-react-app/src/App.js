@@ -11,26 +11,29 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Header from './Components/Shared/Header';
 import Footer from './Components/Shared/Footer';
-import Home from './Components/Home/Home';
-import HocDemo from './Components/HocDemo/HocDemo';
-import UnitTestingDemo from './Components/UnitTestingDemo/UnitTestingDemo';
-import HooksDemo from './Components/HooksDemo/HooksDemo';
-import ContextDemo from './Components/ContextDemo/ContextDemo';
-import StyledCompDemo from './Components/StyledCompDemo/StyledCompDemo';
-import { PageContext } from './Contexts/PageContext';
 
+import { PageContext } from './Contexts/PageContext';
 import { CartContext } from './Contexts/CartContext';
-import { useReducer } from 'react';
+import { lazy, Suspense, useReducer } from 'react';
 import cartReducer from './Reducers/cartReducer';
+import Blog from './Components/HooksDemo/Blog';
+
+const Home = lazy(() => import('./Components/Home/Home'));
+const HooksDemo = lazy(() => import('./Components/HooksDemo/HooksDemo'));
+const HocDemo = lazy(() => import('./Components/HocDemo/HocDemo'));
+const UnitTestingDemo = lazy(() => import('./Components/UnitTestingDemo/UnitTestingDemo'));
+const ContextDemo = lazy(() => import('./Components/ContextDemo/ContextDemo'));
+const StyledCompDemo = lazy(() => import('./Components/StyledCompDemo/StyledCompDemo'));
+
 
 // also known as root comp / default comp / main comp 
 // comp defn 
 // ideal place for layouts
 function App() {
 
-  const [cartState, cartDispatch ] = useReducer(cartReducer, []); 
+  const [cartState, cartDispatch] = useReducer(cartReducer, []);
   console.log(cartState);
-  
+
   // preparing an obj to be passed inside as value to context provider
   const cartData = {
     cartState: cartState,
@@ -44,22 +47,26 @@ function App() {
   }
 
   // comp should return JSX 
-  return(
-    <CartContext.Provider value={ cartData }>
+  return (
+    <CartContext.Provider value={cartData}>
       <BrowserRouter>
         <Header />
 
         <div className='container mt-5 pt-2'>
           {/* Let's configure the routes */}
           <PageContext.Provider value={authInfo}>
-          <Routes>
-              <Route path='/' element={<Home />} />
-              <Route path='/hoc-demo' element={<HocDemo />} />
-              <Route path='/unit-testing' element={<UnitTestingDemo />} />
-              <Route path='/hooks' element={<HooksDemo />} />
-              <Route path='/context' element={<ContextDemo />} />
-              <Route path='/styled-comp' element={<StyledCompDemo />} />
-            </Routes>
+            <Suspense fallback={<div>Loading...</div>}>
+              <Routes>
+                <Route path='/' element={<Home />} />
+                <Route path='/hoc-demo' element={<HocDemo />} />
+                <Route path='/unit-testing' element={<UnitTestingDemo />} />
+                <Route path='/hooks' element={<HooksDemo />}>
+                </Route>
+                <Route path='/context' element={<ContextDemo />} />
+                <Route path='/styled-comp' element={<StyledCompDemo />} />
+                { /* [TODO:] Handle Page Not Found */}
+              </Routes>
+            </Suspense>
           </PageContext.Provider>
         </div>
 
