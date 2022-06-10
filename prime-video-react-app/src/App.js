@@ -29,7 +29,8 @@ import cartReducer from './Reducers/cartReducer';
 function App() {
 
   const [cartState, cartDispatch ] = useReducer(cartReducer, []); 
-
+  console.log(cartState);
+  
   // preparing an obj to be passed inside as value to context provider
   const cartData = {
     cartState: cartState,
