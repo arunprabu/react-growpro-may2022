@@ -19,10 +19,22 @@ import ContextDemo from './Components/ContextDemo/ContextDemo';
 import StyledCompDemo from './Components/StyledCompDemo/StyledCompDemo';
 import { PageContext } from './Contexts/PageContext';
 
+import { CartContext } from './Contexts/CartContext';
+import { useReducer } from 'react';
+import cartReducer from './Reducers/cartReducer';
+
 // also known as root comp / default comp / main comp 
 // comp defn 
 // ideal place for layouts
 function App() {
+
+  const [cartState, cartDispatch ] = useReducer(cartReducer, []); 
+
+  // preparing an obj to be passed inside as value to context provider
+  const cartData = {
+    cartState: cartState,
+    cartDispatch: cartDispatch
+  }
 
   //commonly sharable data
   const authInfo = {
@@ -32,25 +44,27 @@ function App() {
 
   // comp should return JSX 
   return(
-    <BrowserRouter>
-      <Header />
+    <CartContext.Provider value={ cartData }>
+      <BrowserRouter>
+        <Header />
 
-      <div className='container mt-5 pt-2'>
-        {/* Let's configure the routes */}
-        <PageContext.Provider value={authInfo}>
-         <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/hoc-demo' element={<HocDemo />} />
-            <Route path='/unit-testing' element={<UnitTestingDemo />} />
-            <Route path='/hooks' element={<HooksDemo />} />
-            <Route path='/context' element={<ContextDemo />} />
-            <Route path='/styled-comp' element={<StyledCompDemo />} />
-          </Routes>
-        </PageContext.Provider>
-      </div>
+        <div className='container mt-5 pt-2'>
+          {/* Let's configure the routes */}
+          <PageContext.Provider value={authInfo}>
+          <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/hoc-demo' element={<HocDemo />} />
+              <Route path='/unit-testing' element={<UnitTestingDemo />} />
+              <Route path='/hooks' element={<HooksDemo />} />
+              <Route path='/context' element={<ContextDemo />} />
+              <Route path='/styled-comp' element={<StyledCompDemo />} />
+            </Routes>
+          </PageContext.Provider>
+        </div>
 
-      <Footer></Footer>
-    </BrowserRouter>
+        <Footer></Footer>
+      </BrowserRouter>
+    </CartContext.Provider>
   );
 }
 

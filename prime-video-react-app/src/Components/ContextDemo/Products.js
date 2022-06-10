@@ -4,8 +4,9 @@ import { useCartState } from '../../Hooks/useCartState';
 const Products = () => {
 
   console.log('Inside Products - Program Started');
+  // in this line <CartContext.Provider value={ cartData }> 
+  // cartData is passed as obj. so we can expect the same here as returned obj from custom hook
   const { cartDispatch } = useCartState();
-  
 
   const pdtList = [
     {

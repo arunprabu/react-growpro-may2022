@@ -6,14 +6,11 @@ import ReactDOM from 'react-dom'; // react-dom package for working with the DOM.
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Context from './Contexts/CartContext';
 
 // using React DOM package
 // app comp is rendered into an element that has id root
 ReactDOM.render(
-  <Context>
-    <App />
-  </Context>
+  <App />
 , document.getElementById('root')
 );
 

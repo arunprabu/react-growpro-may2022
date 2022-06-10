@@ -5,6 +5,6 @@ import { CartContext } from "../Contexts/CartContext";
 // writing custom hook 
 export const useCartState = () => {
   console.log('Inside useCartState Custom Hook');
-  // inside this custom hook we useContext with the above Cart
+  // inside this custom hook we useContext with the above CartContext
   return useContext(CartContext);
 }

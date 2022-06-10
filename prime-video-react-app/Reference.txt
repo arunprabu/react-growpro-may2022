@@ -250,3 +250,7 @@ Working with useContext() Hook
     consume the in the components 
     useContext()
 
+==
+Refer for More: 
+==
+https://designcode.io/react-hooks-handbook-usereducer-with-usecontext-1
